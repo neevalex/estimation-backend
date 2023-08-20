@@ -6,7 +6,7 @@ $output ='{
   "type": "service_account",
   "project_id": "nosisvoe-translation",
   "private_key_id": "126b6cf9eb67f6f061e94a702186e95e602f4a16",
-  "private_key": "'.$env["GOOGLE_SHEETS_KEY"].'",
+  "private_key": "'.getenv("GOOGLE_SHEETS_KEY").'",
   "client_email": "estimation@nosisvoe-translation.iam.gserviceaccount.com",
   "client_id": "117605250923202237880",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
