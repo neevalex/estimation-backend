@@ -1,6 +1,6 @@
 <?php
 
-$env = parse_ini_file('.env');
+//$env = parse_ini_file('.env');
 
 $output ='{
   "type": "service_account",
