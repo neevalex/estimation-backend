@@ -12,6 +12,7 @@ $json_array = [
     'wallcovering_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'wallcovering_step!A:H', 'top'),
     'interiorpainting_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'interiorpainting_step!A:H', 'top'),
     'completerenovation_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'completerenovation_step!A:J', 'top'),
+    'kitchen_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'kitchen_step!A:G', 'top'),
 ];
 
 $json = json_encode($json_array);
