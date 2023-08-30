@@ -15,7 +15,7 @@ $json_array = [
     'kitchen_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'kitchen_step!A:G', 'top'),
     'electricity_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'electricity_step!A:H', 'top'),
     'plumbing_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'plumbing_step!A:H', 'top'),
-    'insulation_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'insulation_step!A:E', 'top'),
+    'insulation_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'insulation_step!A:H', 'top'),
     'carpentry_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'carpentry_step!A:F', 'top'),
     'disaster_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'disaster_step!A:F', 'top'),
 ];
