@@ -16,7 +16,7 @@ $ret = [
 ];
 
 $data = json_decode(file_get_contents('php://input'), true);
-error_log(getenv("SMTP_PASSWORD"));
+// error_log(getenv("SMTP_PASSWORD"));
 print json_encode($ret);
 
 
@@ -42,4 +42,4 @@ $mail->isHTML(true);                       // Set email format to HTML
 $mail->Subject = 'New submission from entreprisebelair.com ('.$data['email']['name'].')';
 $mail->Body    = '<h3>Client data:</h3> <br><br> Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br><br><br>'.'PDF Data <br> <i>'.json_encode($data['pdf']).'</i>';
 
-if( strlen($data['pdf']) > 10) $mail->send();
+if( strlen(json_encode($data['pdf'])) > 10) $mail->send();
