@@ -39,7 +39,28 @@ $mail->setFrom('estimate@entreprisebelair.com');
 $mail->addAddress('neevalex@gmail.com');
 
 $mail->isHTML(true);                       // Set email format to HTML
-$mail->Subject = 'New submission from entreprisebelair.com ('.$data['email']['name'].')';
-$mail->Body    = '<h3>Client data:</h3> <br><br> Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br><br><br>'.'PDF Data <br> <i>'.json_encode($data['pdf']).'</i>';
+
+
+// 'action' : 'callus'
+// ({'action' : 'shedulecall', email: cfData, pdf: pdfRows, date: date.toDateString() + ' | ' + time.getHours() + ':' + time.getMinutes()});
+
+if( $data['action']=='callus' ) {
+    $mail->Subject = 'Client wants to have a call ASAP ('.$data['email']['name'].')';
+    $mail->Body    = '<h3>Client data:</h3> <br><br> Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br><br><br>'.'PDF Data <br> <i>'.json_encode($data['pdf']).'</i>';
+}
+
+if( $data['action']=='shedulecall' ) {
+    $mail->Subject = 'Client wants to shedule a call ('.$data['email']['name'].')';
+    $mail->Body    = '<h3>Client data:</h3> <br><br> Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br> Time: '.$data['date'].'<br><br><br>'.'PDF Data <br> <i>'.json_encode($data['pdf']).'</i>';
+}
+
+if( $data['action']=='send' ) {
+    $mail->Subject = 'New submission from entreprisebelair.com ('.$data['email']['name'].')';
+    $mail->Body    = '<h3>Client data:</h3> <br><br> Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br><br><br>'.'PDF Data <br> <i>'.json_encode($data['pdf']).'</i>';
+}
+
+
+error_log(json_encode($mail->Subject));
+error_log(json_encode($mail->Body));
 
 if( strlen(json_encode($data['pdf'])) > 10) $mail->send();
