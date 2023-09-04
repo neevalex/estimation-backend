@@ -46,20 +46,20 @@ $mail->isHTML(true);                       // Set email format to HTML
 
 if( $data['action']=='callus' ) {
     $mail->Subject = 'Client wants to have a call ASAP ('.$data['email']['name'].')';
-    $mail->Body    = '<b>Client data:</b> '.PHP_EOL.''.PHP_EOL.' Name: '.$data['email']['name'].''.PHP_EOL.'Phone: '.$data['email']['phone'].''.PHP_EOL.'Email: '.$data['email']['email'].''.PHP_EOL.'Address: '.$data['email']['address'].''.PHP_EOL.''.''.PHP_EOL.'Urgency: '.$data['email']['urgent'].''.PHP_EOL.''.PHP_EOL.''.PHP_EOL.''.'PDF Data '.PHP_EOL.' <pre language="js">'.json_encode($data['pdf']).'</pre>';
+    $mail->Body    = '<b>Client data:</b> <br><br>Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br><br><br>'.'PDF Data <br> <pre language="js">'.json_encode($data['pdf']).'</pre>';
 }
 
 if( $data['action']=='shedulecall' ) {
     $mail->Subject = 'Client wants to shedule a call ('.$data['email']['name'].')';
-    $mail->Body    = '<b>Client data:</b> '.PHP_EOL.''.PHP_EOL.' Name: '.$data['email']['name'].''.PHP_EOL.'Phone: '.$data['email']['phone'].''.PHP_EOL.'Email: '.$data['email']['email'].''.PHP_EOL.'Address: '.$data['email']['address'].''.PHP_EOL.''.''.PHP_EOL.'Urgency: '.$data['email']['urgent'].''.PHP_EOL.' Time: '.$data['date'].''.PHP_EOL.''.PHP_EOL.''.PHP_EOL.''.'PDF Data '.PHP_EOL.' <pre language="js">'.json_encode($data['pdf']).'</pre>';
+    $mail->Body    = '<b>Client data:</b> <br><br>Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br> Time: '.$data['date'].'<br><br><br>'.'PDF Data <br> <pre language="js">'.json_encode($data['pdf']).'</pre>';
 }
 
 if( $data['action']=='send' ) {
     $mail->Subject = 'New submission from entreprisebelair.com ('.$data['email']['name'].')';
-    $mail->Body    = '<b>Client data:</b> '.PHP_EOL.''.PHP_EOL.' Name: '.$data['email']['name'].''.PHP_EOL.'Phone: '.$data['email']['phone'].''.PHP_EOL.'Email: '.$data['email']['email'].''.PHP_EOL.'Address: '.$data['email']['address'].''.PHP_EOL.''.''.PHP_EOL.'Urgency: '.$data['email']['urgent'].''.PHP_EOL.''.PHP_EOL.''.PHP_EOL.''.'PDF Data '.PHP_EOL.' <pre language="js">'.json_encode($data['pdf']).'</pre>';
+    $mail->Body    = '<b>Client data:</b> <br><br>Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br>Pro: '.$data['email']['pro'].'<br><br><br>'.'PDF Data <br> <pre language="js">'.json_encode($data['pdf']).'</pre>';
 }
 
-
+ 
 //error_log(json_encode($data['pdf']));
 //error_log(json_encode($mail->Body));
 
@@ -67,7 +67,7 @@ $apiToken = getenv("TELEGRAM_KEY");
  
 $t_data = [ 
  'chat_id' => '@belairestimate', 
- 'text' => $mail->Subject.' ::: '.$mail->Body
+ 'text' => $mail->Subject.' ::: '.str_replace('<br>','%0A', $mail->Body)
 ];
  
 if( strlen(json_encode($data['pdf'])) > 10) {
