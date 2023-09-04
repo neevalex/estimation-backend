@@ -72,7 +72,7 @@ $t_data = [
  
 if( strlen(json_encode($data['pdf'])) > 10) {
     $mail->send();
-    $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" .http_build_query($t_data) );
+    $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" .http_build_query($t_data).'&parse_mode=html' );
 }
 
 
