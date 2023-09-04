@@ -63,7 +63,7 @@ if( $data['action']=='send' ) {
 //error_log(json_encode($mail->Subject));
 //error_log(json_encode($mail->Body));
 
-$apiToken = "6315492960:AAEocFRLrIjjfKDWOekNPajU0_oHw3nWxUw"; 
+$apiToken = getenv("TELEGRAM_KEY"); 
  
 $data = [ 
  'chat_id' => '@belairestimate', 
