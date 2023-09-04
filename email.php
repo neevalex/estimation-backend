@@ -46,17 +46,17 @@ $mail->isHTML(true);                       // Set email format to HTML
 
 if( $data['action']=='callus' ) {
     $mail->Subject = 'Client wants to have a call ASAP ('.$data['email']['name'].')';
-    $mail->Body    = '<h3>Client data:</h3> <br><br> Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br><br><br>'.'PDF Data <br> <i>'.json_encode($data['pdf']).'</i>';
+    $mail->Body    = '<b>Client data:</b> \n\n Name: '.$data['email']['name'].'\nPhone: '.$data['email']['phone'].'\nEmail: '.$data['email']['email'].'\nAddress: '.$data['email']['address'].'\n'.'\nUrgency: '.$data['email']['urgent'].'\n\n\n'.'PDF Data \n <pre language="js">'.json_encode($data['pdf']).'</pre>';
 }
 
 if( $data['action']=='shedulecall' ) {
     $mail->Subject = 'Client wants to shedule a call ('.$data['email']['name'].')';
-    $mail->Body    = '<h3>Client data:</h3> <br><br> Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br> Time: '.$data['date'].'<br><br><br>'.'PDF Data <br> <i>'.json_encode($data['pdf']).'</i>';
+    $mail->Body    = '<b>Client data:</b> \n\n Name: '.$data['email']['name'].'\nPhone: '.$data['email']['phone'].'\nEmail: '.$data['email']['email'].'\nAddress: '.$data['email']['address'].'\n'.'\nUrgency: '.$data['email']['urgent'].'\n Time: '.$data['date'].'\n\n\n'.'PDF Data \n <pre language="js">'.json_encode($data['pdf']).'</pre>';
 }
 
 if( $data['action']=='send' ) {
     $mail->Subject = 'New submission from entreprisebelair.com ('.$data['email']['name'].')';
-    $mail->Body    = '<h3>Client data:</h3> <br><br> Name: '.$data['email']['name'].'<br>Phone: '.$data['email']['phone'].'<br>Email: '.$data['email']['email'].'<br>Address: '.$data['email']['address'].'<br>'.'<br>Urgency: '.$data['email']['urgent'].'<br><br><br>'.'PDF Data <br> <i>'.json_encode($data['pdf']).'</i>';
+    $mail->Body    = '<b>Client data:</b> \n\n Name: '.$data['email']['name'].'\nPhone: '.$data['email']['phone'].'\nEmail: '.$data['email']['email'].'\nAddress: '.$data['email']['address'].'\n'.'\nUrgency: '.$data['email']['urgent'].'\n\n\n'.'PDF Data \n <pre language="js">'.json_encode($data['pdf']).'</pre>';
 }
 
 
