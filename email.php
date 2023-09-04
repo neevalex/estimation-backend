@@ -67,7 +67,7 @@ $apiToken = getenv("TELEGRAM_KEY");
  
 $t_data = [ 
  'chat_id' => '@belairestimate', 
- 'text' => $mail->Subject.' ::: '.str_replace('<br>','\n', $mail->Body)
+ 'text' => $mail->Subject.' ::: '.str_replace('<br>',PHP_EOL, $mail->Body)
 ];
  
 if( strlen(json_encode($data['pdf'])) > 10) {
