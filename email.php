@@ -60,7 +60,20 @@ if( $data['action']=='send' ) {
 }
 
 
-error_log(json_encode($mail->Subject));
-error_log(json_encode($mail->Body));
+//error_log(json_encode($mail->Subject));
+//error_log(json_encode($mail->Body));
 
-if( strlen(json_encode($data['pdf'])) > 10) $mail->send();
+$apiToken = "6315492960:AAEocFRLrIjjfKDWOekNPajU0_oHw3nWxUw"; 
+ 
+$data = [ 
+ 'chat_id' => '@belairestimate', 
+ 'text' => $mail->Subject.' ::: '.$mail->Body
+];
+ 
+if( strlen(json_encode($data['pdf'])) > 10) {
+    $mail->send();
+    $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" .http_build_query($data) );
+}
+
+
+
