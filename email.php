@@ -60,7 +60,7 @@ if( $data['action']=='send' ) {
 }
 
  
-//error_log(json_encode($data['pdf']));
+error_log(json_encode($data['pdf']));
 //error_log(json_encode($mail->Body));
 
 $apiToken = getenv("TELEGRAM_KEY"); 
