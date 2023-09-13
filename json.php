@@ -5,6 +5,7 @@ include_once 'functions/googleSheets.php';
 
 
 $json_array = [
+    'options' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'options!A:B', 'left'),
     'translations' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'translations!A:B', 'left'),
     'index_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'index_step!A:D', 'top'),
     'rooms_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'rooms_step!A:E', 'top'),
