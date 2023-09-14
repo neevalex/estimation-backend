@@ -18,7 +18,7 @@ $json_array = [
     'plumbing_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'plumbing_step!A:I', 'top'),
     'insulation_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'insulation_step!A:I', 'top'),
     'carpentry_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'carpentry_step!A:I', 'top'),
-    'disaster_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'disaster_step!A:G', 'top'),
+    'disaster_step' => getGoogleSheetsData('1sd277Vpeed1ljpqrZV2issFAo3_qKiw-Kn1WRY-VwG8', 'disaster_step!A:H', 'top'),
 ];
 
 $json = json_encode($json_array);
