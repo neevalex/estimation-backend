@@ -36,7 +36,7 @@ $mail->Password   = getenv("SMTP_PASSWORD");            // SMTP account password
 
 // Content
 $mail->setFrom('estimate@entreprisebelair.com');   
-$mail->addAddress('contact@entreprisebelair.com');
+$mail->addAddress('contact@belairhabitat.com');
 
 $mail->isHTML(true);                       // Set email format to HTML
 
